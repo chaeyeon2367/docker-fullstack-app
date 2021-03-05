@@ -6,10 +6,10 @@ services:
   - docker
 
 before_install:
-  - docker build -t chaeyeon2367/docker-fullstack-app -f ./frontend/Dockerfile.dev ./frontend
+  - docker build -t chaeyeon2367/react-test-app -f ./frontend/Dockerfile.dev ./frontend
 
 script:
-  - docker run -e CI=true chaeyeon2367/docker-fullstack-app npm test
+  - docker run -e CI=true chaeyeon2367/react-test-app npm test
 
 after_success:
   - docker build -t chaeyeon2367/docker-frontend ./frontend
